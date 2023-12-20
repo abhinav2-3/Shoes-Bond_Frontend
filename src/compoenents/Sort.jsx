@@ -6,7 +6,7 @@ const Sort = () => {
   return (
     <div className="sorting">
       <span>{filter_Products.length} Total Products</span>
-      <form action="">
+      <form>
         <select name="sort" onClick={sorting}>
           <option value="lowToHigh">Low To High</option>
           <option value="highToLow">High To Low</option>

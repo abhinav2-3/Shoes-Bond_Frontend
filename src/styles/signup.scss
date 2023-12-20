@@ -1,0 +1,45 @@
+.signup {
+    padding: 0 8rem;
+    display: flex;
+    width: 70%;
+    margin: 2rem auto;
+    align-items: center;
+    flex-direction: column;
+
+    >h2 {
+        font: 800 1.8rem $text;
+        text-transform: uppercase;
+    }
+
+    >form {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin: 1rem 0;
+
+        >label {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        >input {
+            padding: 0.5rem 2rem;
+            font-size: 1rem;
+            border-radius: 6px;
+            border: 1px solid black;
+            color: rgb(36, 36, 36);
+            outline: none;
+        }
+
+        >div {
+            display: flex;
+            justify-content: flex-end;
+            margin: 0.8rem 0;
+            font: 500 1rem $text;
+        }
+
+        >button {
+            margin-top: 1rem;
+        }
+    }
+}

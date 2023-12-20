@@ -1,5 +1,6 @@
 import React from "react";
 import hero from "../assets/hero.jpg";
+import { NavLink } from "react-router-dom";
 const Herosection = ({ myData }) => {
   const { name } = myData;
   return (
@@ -12,7 +13,9 @@ const Herosection = ({ myData }) => {
           omnis asperiores, eum enim suscipit officiis laborum optio dicta illum
           inventore Lorem ipsum dolor sit amet.
         </p>
-        <button className="btn">Signup Now</button>
+        <NavLink to={"/signup"} className="btn">
+          Get Started
+        </NavLink>
       </aside>
       <aside className="heroImage">
         <img src={hero} alt="Hero" />

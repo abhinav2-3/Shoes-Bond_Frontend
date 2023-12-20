@@ -6,6 +6,8 @@ import Header from "./compoenents/Header";
 import Footer from "./compoenents/Footer";
 import About from "./screens/About";
 import SingleProduct from "./compoenents/SingleProduct";
+import Signup from "./screens/Signup";
+import Login from "./screens/Login";
 
 function App() {
   const { featureProducts } = useProductContext();
@@ -18,8 +20,9 @@ function App() {
         <Route path="/about" element={<About />} />
         {/* <Route path="/" element={<Home />} /> */}
         {/* <Route path="/" element={<Home />} /> */}
-        {/* <Route path="/" element={<Home />} /> */}
         <Route path="/singleProduct" element={<SingleProduct />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </Router>
