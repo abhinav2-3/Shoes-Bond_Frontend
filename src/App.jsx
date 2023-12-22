@@ -1,5 +1,4 @@
 import "./styles/App.scss";
-import { useProductContext } from "./context/ProductContext";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./screens/Home";
 import Header from "./compoenents/Header";
@@ -8,17 +7,16 @@ import About from "./screens/About";
 import SingleProduct from "./compoenents/SingleProduct";
 import Signup from "./screens/Signup";
 import Login from "./screens/Login";
+import Products from "./screens/Products";
 
 function App() {
-  const { featureProducts } = useProductContext();
-  console.log(featureProducts);
   return (
     <Router>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/products" element={<Products />} />
         {/* <Route path="/" element={<Home />} /> */}
         <Route path="/singleProduct" element={<SingleProduct />} />
         <Route path="/signup" element={<Signup />} />

@@ -18,7 +18,7 @@ const Filter = () => {
   };
 
   const categoryData = getUniqueData(all_Products, "category");
-  const companyData = getUniqueData(all_Products, "company");
+  const brandData = getUniqueData(all_Products, "brand");
 
   return (
     <section className="filter">
@@ -50,7 +50,7 @@ const Filter = () => {
       <div className="company">
         <h4>Company</h4>
         <select name="company" onClick={updateFilterValue}>
-          {companyData.map((currElem, index) => {
+          {brandData.map((currElem, index) => {
             return (
               <option value={currElem} name="company" key={index}>
                 {currElem}

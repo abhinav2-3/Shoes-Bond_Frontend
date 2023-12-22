@@ -7,7 +7,7 @@ const ProductList = () => {
   return (
     <div className="productList">
       {filter_Products.map((item, index) => {
-        return <Product key={index} {...item} />;
+        return <Product key={item.id} {...item} />;
       })}
     </div>
   );
