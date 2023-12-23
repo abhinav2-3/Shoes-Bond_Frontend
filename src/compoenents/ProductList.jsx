@@ -6,7 +6,7 @@ const ProductList = () => {
   const { filter_Products } = useFilterContext();
   return (
     <div className="productList">
-      {filter_Products.map((item, index) => {
+      {filter_Products.map((item) => {
         return <Product key={item.id} {...item} />;
       })}
     </div>

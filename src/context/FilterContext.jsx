@@ -25,7 +25,10 @@ const FilterProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
+    return dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
+  }, [products]);
+
+  useEffect(() => {
     dispatch({ type: "FILTER_PRODUCTS" });
     dispatch({ type: "SORT_PRODUCTS" });
   }, [products, state.sorting_value, state.filters]);
@@ -40,8 +43,13 @@ const FilterProvider = ({ children }) => {
     dispatch({ type: "UPDATE_FILTER_VALUE", payload: { name, value } });
   };
 
+  const clearFilter = () => {
+    return dispatch({ type: "CLEAR_FILTER" });
+  };
   return (
-    <FilterContext.Provider value={{ ...state, sorting, updateFilterValue }}>
+    <FilterContext.Provider
+      value={{ ...state, sorting, updateFilterValue, clearFilter }}
+    >
       {children}
     </FilterContext.Provider>
   );
