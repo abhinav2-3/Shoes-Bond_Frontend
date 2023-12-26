@@ -6,7 +6,7 @@ import FormatPrice from "./FormatPrice";
 import { TbTruckDelivery, TbReplace } from "react-icons/tb";
 import { MdOutlineSecurity } from "react-icons/md";
 import Rating from "./Rating";
-// import AddToCart from "./AddToCart";
+import AddToCart from "./AddToCart";
 
 const SingleProduct = () => {
   const { state } = useLocation();
@@ -92,7 +92,11 @@ const SingleProduct = () => {
               Brand : <span>{brand}</span>
             </span>
             <hr />
-            {/* {countInStock > 0 && <AddToCart product={productData} />} */}
+            {countInStock > 0 ? (
+              <AddToCart product={productData} />
+            ) : (
+              <button className="btn outOfStockBtn">Out of Stock</button>
+            )}
           </div>
         </aside>
       </div>

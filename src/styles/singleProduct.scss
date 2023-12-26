@@ -81,13 +81,19 @@
                     border: none;
                     width: 80%;
                 }
+
+                >.outOfStockBtn {
+                    margin-left: 2rem;
+                    width: 10rem;
+                    background-color: #df375e;
+
+                    &:hover {
+                        background-color: #df375e;
+                        transform: unset;
+                        cursor: unset;
+                    }
+                }
             }
-
-            >button {
-                margin-left: 2rem;
-            }
-
-
         }
     }
 }

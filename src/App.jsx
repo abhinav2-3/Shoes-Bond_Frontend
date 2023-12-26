@@ -8,6 +8,9 @@ import SingleProduct from "./compoenents/SingleProduct";
 import Signup from "./screens/Signup";
 import Login from "./screens/Login";
 import Products from "./screens/Products";
+import Cart from "./screens/Cart";
+import ErrorPage from "./compoenents/ErrorPage";
+import Contacts from "./screens/Contacts";
 
 function App() {
   return (
@@ -16,11 +19,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contacts />} />
         <Route path="/products" element={<Products />} />
-        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/cart" element={<Cart />} />
         <Route path="/singleProduct" element={<SingleProduct />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
     </Router>

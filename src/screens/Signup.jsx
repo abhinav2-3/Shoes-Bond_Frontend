@@ -40,6 +40,8 @@ const Signup = () => {
 
       if (response.status === 201) {
         localStorage.setItem("authToken", response.data.authToken);
+        localStorage.setItem("authUser", JSON.stringify(response.data.user));
+        localStorage.setItem("userId", response.data.existingUser._id);
         navigate("/");
       }
     } catch (err) {

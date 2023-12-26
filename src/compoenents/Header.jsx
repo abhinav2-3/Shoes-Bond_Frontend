@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
+import { useCartContext } from "../context/CartContext";
 
 const Header = () => {
   const auth = localStorage.getItem("authToken");
@@ -10,10 +11,11 @@ const Header = () => {
   };
   const isLoginPage = location.pathname === "/login";
   const isSignupPage = location.pathname === "/signup";
+  const { cart } = useCartContext();
   return (
     <nav>
       <h1>
-        <NavLink to={"/"}>Swift Cart</NavLink>
+        <NavLink to={"/"}>Shoes Bond.</NavLink>
       </h1>
 
       <div>
@@ -25,7 +27,7 @@ const Header = () => {
             <NavLink to={"/contact"}>Contact</NavLink>
             <NavLink to={"/cart"}>
               <FaShoppingCart />
-              <span className="badge">1</span>
+              {cart.length > 0 && <span className="badge">{cart.length}</span>}
             </NavLink>
             <NavLink to={"/"} className="btn" onClick={logoutHandler}>
               Log Out

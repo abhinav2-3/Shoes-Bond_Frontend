@@ -5,7 +5,8 @@ import FormatPrice from "./FormatPrice";
 const Product = (item) => {
   const navigate = useNavigate();
   const handleNavigate = () => {
-    navigate(`/singleProduct?productname=${encodeURIComponent(item.name)}`, {
+    const productName = encodeURIComponent(item.name);
+    navigate(`/singleProduct?productname=${productName}`, {
       state: item,
     });
   };

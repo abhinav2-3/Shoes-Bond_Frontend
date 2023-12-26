@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { FaCheck } from "react-icons/fa";
 import CartAmountToggle from "./CartAmountToggle";
 import { useCartContext } from "../context/CartContext";
+import { Toaster } from "react-hot-toast";
 
 const AddToCart = ({ product }) => {
-  const { id, colors, stock } = product;
+  const { id, countInStock } = product;
 
-  const [color, setColor] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
 
   const decrement = () => {
@@ -14,36 +13,20 @@ const AddToCart = ({ product }) => {
   };
 
   const increment = () => {
-    amount < stock ? setAmount(amount + 1) : setAmount(stock);
+    amount < countInStock ? setAmount(amount + 1) : setAmount(countInStock);
   };
 
   const { addToCart } = useCartContext();
 
   return (
     <>
-      <div className="colors_container">
-        {colors.map((currColor, index) => (
-          <button
-            key={index}
-            className={
-              color === currColor ? "buttonStyle active" : "buttonStyle"
-            }
-            style={{ backgroundColor: currColor }}
-            onClick={() => setColor(currColor)}
-          >
-            {color === currColor ? <FaCheck /> : null}
-          </button>
-        ))}
-      </div>
+      <Toaster />
       <CartAmountToggle
         amount={amount}
         increment={increment}
         decrement={decrement}
       />
-      <button
-        className="btn"
-        onClick={() => addToCart(color, id, amount, product)}
-      >
+      <button className="btn" onClick={() => addToCart(id, amount, product)}>
         Add To Cart
       </button>
     </>

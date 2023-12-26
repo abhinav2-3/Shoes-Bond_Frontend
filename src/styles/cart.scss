@@ -15,7 +15,6 @@
             border-radius: 50%;
         }
 
-        >h1 {}
     }
 
     >.table {
@@ -43,8 +42,9 @@
                 width: 23%;
 
                 >img {
+                    border: 1px solid $black;
                     width: 4rem;
-                    height: 3rem;
+                    height: 4rem;
                     object-fit: contain;
                 }
 

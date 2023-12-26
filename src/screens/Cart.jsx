@@ -4,29 +4,59 @@ import CartAmountToggle from "../compoenents/CartAmountToggle";
 import { useCartContext } from "../context/CartContext";
 import FormatPrice from "../compoenents/FormatPrice";
 import { MdDelete } from "react-icons/md";
-import { useAuth0 } from "@auth0/auth0-react";
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 const Cart = () => {
-  const { isAuthenticated, user } = useAuth0();
   const {
     cart,
     removeProduct,
-    clearCart,
     decrement,
     increment,
     total_price,
     shipping_fee,
   } = useCartContext();
-
+  const userId = localStorage.getItem("userId");
+  const toastSuccess = () => {
+    toast.success("Order Placed Successfully");
+  };
+  const placeOrder = () => {
+    [...cart].forEach(async (item) => {
+      try {
+        const response = await axios.post(
+          "http://localhost:8000/orders",
+          {
+            name: item.name,
+            imageURL: item.image,
+            amount: item.amount,
+            price: item.price * item.amount,
+            userId,
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+      } catch (err) {
+        if (!err?.response) {
+          toast("No Server Response", {
+            duration: 2000,
+          });
+        } else if (err.response?.status === 409) {
+          toast.error("Already Registered with this Email");
+        } else {
+          toast("Login Failed\n\nTry After Sometime", {
+            duration: 2000,
+          });
+        }
+      }
+    });
+  };
   if (cart.length > 0) {
     return (
       <section className="cart">
-        {isAuthenticated && (
-          <div className="user-detail">
-            <img src={user.picture} alt={user.name} />
-            <h2>{user.name}</h2>
-          </div>
-        )}
+        <Toaster />
         <div className="table">
           <p>Item</p>
           <p>Price</p>
@@ -36,16 +66,13 @@ const Cart = () => {
         </div>
         <hr />
         <section>
-          {cart.map((currElem, index) => {
+          {cart.map((currElem) => {
             return (
-              <div key={index}>
+              <div key={currElem.id}>
                 <div className="prod_data">
                   <img src={currElem.image} alt={currElem.name} />
                   <aside>
                     <span>{currElem.name}</span>
-                    <div>
-                      Color :<p style={{ backgroundColor: currElem.color }}></p>
-                    </div>
                   </aside>
                 </div>
                 <p className="price">
@@ -72,8 +99,14 @@ const Cart = () => {
             <NavLink to={"/products"}>
               <button className="btn">Continue Shopping</button>
             </NavLink>
-            <button className="btn" onClick={clearCart}>
-              Clear Filter
+            <button
+              className="btn"
+              onClick={() => {
+                placeOrder(cart);
+                toastSuccess();
+              }}
+            >
+              Place Order
             </button>
           </div>
           <div className="total">
@@ -86,14 +119,18 @@ const Cart = () => {
             <p>
               Shipping Charge :{" "}
               <span>
-                <FormatPrice price={shipping_fee} />
+                {total_price > 600000 ? (
+                  0
+                ) : (
+                  <FormatPrice price={shipping_fee} />
+                )}
               </span>
             </p>
             <hr />
             <p>
               Total :{" "}
               <span>
-                <FormatPrice price={shipping_fee + total_price} />
+                <FormatPrice price={total_price} />
               </span>
             </p>
           </div>

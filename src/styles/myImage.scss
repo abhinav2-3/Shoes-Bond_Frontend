@@ -50,37 +50,6 @@
     }
 }
 
-.colors_container {
-    display: flex;
-    justify-content: start;
-
-    >.buttonStyle {
-        border: none;
-        outline: none;
-        border-radius: 50%;
-        width: 1rem;
-        height: 1rem;
-        margin-left: 10px;
-        opacity: 0.5;
-        cursor: pointer;
-
-        &:hover {
-            opacity: 1;
-        }
-
-        >svg {
-            margin-top: 2px;
-            font-size: 0.8rem;
-        }
-    }
-
-    .active {
-        opacity: 1;
-    }
-
-
-}
-
 .qty {
     margin-left: 1rem;
     display: flex;

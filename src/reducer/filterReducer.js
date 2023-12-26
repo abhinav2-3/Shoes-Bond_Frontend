@@ -44,6 +44,7 @@ const filterReducer = (state, action) => {
           [name]: value,
         },
       };
+
     case "FILTER_PRODUCTS": {
       const { text, category, company, price } = state.filters;
       const { all_Products } = state;
