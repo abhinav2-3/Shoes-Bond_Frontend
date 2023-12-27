@@ -25,6 +25,7 @@ const Header = () => {
         {auth ? (
           <>
             <NavLink to={"/contact"}>Contact</NavLink>
+            <NavLink to={"/myOrders"}>My Orders</NavLink>
             <NavLink to={"/cart"}>
               <FaShoppingCart />
               {cart.length > 0 && <span className="badge">{cart.length}</span>}

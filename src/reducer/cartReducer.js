@@ -103,11 +103,16 @@ const cartReducer = (state, action) => {
       };
     }
 
-    case "PLACE_ORDER": {
+    case "PLACE_ORDER":
       return {
         ...state,
       };
-    }
+
+    case "CLEAR_CART":
+      return {
+        ...state,
+        cart: [],
+      };
     default:
       return state;
   }

@@ -11,6 +11,7 @@ import Products from "./screens/Products";
 import Cart from "./screens/Cart";
 import ErrorPage from "./compoenents/ErrorPage";
 import Contacts from "./screens/Contacts";
+import MyOrder from "./screens/MyOrder";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/contact" element={<Contacts />} />
         <Route path="/products" element={<Products />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/myOrders" element={<MyOrder />} />
         <Route path="/singleProduct" element={<SingleProduct />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />

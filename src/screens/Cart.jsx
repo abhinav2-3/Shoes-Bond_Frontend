@@ -15,10 +15,12 @@ const Cart = () => {
     increment,
     total_price,
     shipping_fee,
+    clearCart,
   } = useCartContext();
   const userId = localStorage.getItem("userId");
   const toastSuccess = () => {
     toast.success("Order Placed Successfully");
+    clearCart();
   };
   const placeOrder = () => {
     [...cart].forEach(async (item) => {
@@ -65,7 +67,7 @@ const Cart = () => {
           <p>Remove</p>
         </div>
         <hr />
-        <section>
+        <section className="productDetail">
           {cart.map((currElem) => {
             return (
               <div key={currElem.id}>

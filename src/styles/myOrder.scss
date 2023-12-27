@@ -1,0 +1,67 @@
+.myOrder {
+    width: 100%;
+    padding: 0 $p_lg;
+    margin: 2rem auto;
+
+    >.table {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        >p {
+            font: 500 1rem $text;
+            padding: 10px;
+            text-align: center
+        }
+    }
+
+    >.productDetail {
+        width: 100%;
+
+        >div {
+            display: flex;
+            margin: 1rem 0;
+
+            >.prod_data {
+                display: flex;
+                gap: 15px;
+                align-items: center;
+                width: 25%;
+
+                >img {
+                    border: 1px solid $black;
+                    width: 4rem;
+                    height: 4rem;
+                    object-fit: contain;
+                }
+
+                >aside {
+                    margin: 5px 0;
+
+                    >span {
+                        font-weight: 500;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+
+            >.price {
+                width: 25%;
+                display: grid;
+                place-items: center;
+                font-weight: 500;
+            }
+
+            >.amount {
+                display: grid;
+                place-items: center;
+                width: 25%;
+            }
+
+            >.date {
+                display: grid;
+                place-items: center;
+                width: 25%;
+            }
+        }
+    }
+}

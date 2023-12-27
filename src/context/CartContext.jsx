@@ -34,7 +34,9 @@ const CartProvider = ({ children }) => {
     console.log(cart);
     return dispatch({ type: "PLACE_ORDER", payload: cart });
   };
-
+  const clearCart = () => {
+    return dispatch({ type: "CLEAR_CART" });
+  };
   useEffect(() => {
     localStorage.setItem("shoesBond", JSON.stringify(state.cart));
     dispatch({ type: "SET_TOTAL_PRICE" });
@@ -48,6 +50,7 @@ const CartProvider = ({ children }) => {
         decrement,
         removeProduct,
         placeOrder,
+        clearCart,
       }}
     >
       {children}
