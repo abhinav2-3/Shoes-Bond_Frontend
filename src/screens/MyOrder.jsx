@@ -5,15 +5,22 @@ import FormatPrice from "../compoenents/FormatPrice";
 import FormatDate from "../compoenents/DateFormat";
 
 const MyOrder = () => {
-  const [orderData, setOrderData] = useState();
+  const [orderData, setOrderData] = useState([]);
+  //   const [loading, setLoading] = useState(true);
+  const userId = localStorage.getItem("userId");
+
   const myOrders = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/orders", {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      await setOrderData(response.data);
+      const response = await axios.post(
+        "http://localhost:8000/getOrders",
+        { userId },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      setOrderData(response.data);
     } catch (error) {
       if (!error?.response) {
         toast("No Server Response", {
@@ -28,13 +35,41 @@ const MyOrder = () => {
       }
     }
   };
+
+  const clearOrderHistory = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/clearOrders",
+        { userId },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      setOrderData(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     myOrders();
   }, []);
 
-  console.log(orderData);
-  if (!orderData || orderData === "[]") {
-    return <div>...Loading</div>;
+  if (orderData.length === 0 || orderData === "[]") {
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "50vh",
+          display: "grid",
+          placeItems: "center",
+        }}
+      >
+        You Haven't Order Anything Yet !!
+      </div>
+    );
   } else {
     return (
       <section className="myOrder">
@@ -68,6 +103,9 @@ const MyOrder = () => {
             );
           })}
         </section>
+        {orderData.length > 0 && (
+          <button onClick={clearOrderHistory}>Clear Order History</button>
+        )}
       </section>
     );
   }

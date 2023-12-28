@@ -13,7 +13,7 @@ const Contacts = () => {
             width="1080"
             height="450"
             style={{ border: 0 }}
-            allowFullScreen="true"
+            llowFullScreen={true}
             loading="lazy"
             referrerPolicy="same-origin"
           ></iframe>
