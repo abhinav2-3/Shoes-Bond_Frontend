@@ -4,7 +4,6 @@
     background-color: $light;
     margin: 1rem 0;
     display: grid;
-    // border: 1px solid red;
     place-items: center;
 
     >h2 {
@@ -24,6 +23,20 @@
         >img {
             width: 120px;
             object-fit: contain;
+        }
+    }
+}
+
+@media only screen and (min-width: 993px) and (max-width:1200px) {
+    .companies>div {
+        padding: 0 $p_md;
+    }
+}
+
+@media only screen and (min-width:701px) and (max-width:995px) {
+    .companies {
+        >div {
+            padding: 0 $p_sm;
         }
     }
 }

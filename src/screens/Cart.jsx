@@ -25,7 +25,7 @@ const Cart = () => {
   const placeOrder = () => {
     [...cart].forEach(async (item) => {
       try {
-        const response = await axios.post(
+        await axios.post(
           "http://localhost:8000/orders",
           {
             name: item.name,
@@ -54,6 +54,7 @@ const Cart = () => {
         }
       }
     });
+    toast.success("aas;ldf", { duration: "10s" });
   };
   if (cart.length > 0) {
     return (

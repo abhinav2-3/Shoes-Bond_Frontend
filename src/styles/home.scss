@@ -3,5 +3,85 @@
     height: auto;
     margin-top: 5rem;
     margin-bottom: 3rem;
-    // border: 1px solid red;
+}
+
+@media only screen and (min-width:993px) and (max-width:1200px) {
+    .home {
+        >.herosection {
+            padding: 0 $p_md;
+            height: 35vw;
+
+            >aside {
+                &:last-of-type {
+                    &::before {
+                        top: 0vw;
+                        right: -1vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:701px) and (max-width:995px) {
+    .home {
+        >.herosection {
+            padding: 0 $p_sm;
+            height: 40vw;
+
+            >aside {
+                &:first-of-type {
+                    gap: 15px;
+
+                    >h1 {
+                        font: 500 2rem $text;
+                    }
+
+                    >p {
+                        font: 400 0.96rem $text;
+                    }
+                }
+
+                &:last-of-type {
+                    &::before {
+                        top: 3vw;
+                        right: 0vw;
+                        width: 25vw;
+                        height: 20vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .home {
+        >.herosection {
+            padding: 0 $p_zero;
+
+            >aside {
+                &:first-of-type {
+                    gap: 15px;
+
+                    >h1 {
+                        font: 500 1.7rem $text;
+                    }
+
+                    >p {
+                        font: 400 0.9rem $text;
+                    }
+                }
+
+                &:last-of-type {
+                    &::before {
+                        top: 3vw;
+                        right: 0vw;
+                        width: 25vw;
+                        height: 20vw;
+                    }
+                }
+            }
+        }
+    }
 }

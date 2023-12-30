@@ -6,7 +6,6 @@ import FormatDate from "../compoenents/DateFormat";
 
 const MyOrder = () => {
   const [orderData, setOrderData] = useState([]);
-  //   const [loading, setLoading] = useState(true);
   const userId = localStorage.getItem("userId");
 
   const myOrders = async () => {
