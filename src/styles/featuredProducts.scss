@@ -4,7 +4,7 @@
     width: 100%;
     height: 60vh;
     display: flex;
-    // border: 1px solid red;
+    flex-wrap: wrap;
     flex-direction: column;
     background-color: $white;
     justify-content: center;
@@ -121,25 +121,41 @@
     }
 }
 
-@media only screen and (min-width:701px) and (max-width:995px) {
+@media only screen and (min-width: 426px) and (max-width: 700px) {
     .featureProducts {
-        padding: 0 $p_sm;
+        padding: 0 $p_zero;
 
         >h3 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
         }
     }
 
     .navProduct {
         height: 35vh;
 
+        >figure {
+            height: 30vh;
+
+            >figcaption {
+                font-size: 0.7rem;
+                padding: 3px 8px;
+            }
+        }
+
         >div {
             flex-direction: column;
-            align-items: start;
-            padding: 0 10px;
+            justify-content: unset;
+            align-items: flex-start;
+            padding: 0 8px;
 
             >h3 {
-                font-size: 1rem;
+                font-size: 0.8rem;
+                font-weight: 600;
+            }
+
+            >p {
+                font-size: 0.9rem;
+                font-weight: 500;
             }
         }
     }

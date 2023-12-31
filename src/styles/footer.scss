@@ -65,7 +65,6 @@ footer {
                     justify-content: center;
 
                     a {
-                        list-style: none;
                         color: $white;
 
                         >svg {
@@ -87,6 +86,7 @@ footer {
         }
 
         >div {
+            border: 1px solid;
             width: 33%;
             height: 100%;
             display: flex;
@@ -146,6 +146,57 @@ footer {
                         font-size: 2.8rem;
                     }
                 }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 700px) {
+    footer {
+        >div {
+            margin: 0 $p_zero;
+            right: -2rem;
+
+            >p {
+                font-size: 0.7rem;
+            }
+
+            .btn {
+                font-size: 0.6rem;
+                width: 6rem;
+                height: 2rem;
+                padding: 0.3rem 0.7rem;
+            }
+        }
+
+        >section {
+            padding: 0 $p_zero;
+            justify-content: space-between;
+
+            >aside {
+                width: 45%;
+
+                &:first-of-type {
+                    >p {
+                        font-size: 0.8rem;
+                        line-height: 110%;
+                    }
+                }
+
+                &:last-of-type>div {
+                    width: 100%;
+
+                    >a>svg {
+                        font-size: 2rem;
+                        padding: 6px;
+                        border: 1px solid;
+                    }
+
+                }
+            }
+
+            >div {
+                display: none;
             }
         }
     }

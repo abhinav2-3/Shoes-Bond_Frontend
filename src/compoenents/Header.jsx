@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { useCartContext } from "../context/CartContext";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoClose } from "react-icons/io5";
 
 const Header = () => {
+  const [menu, setMenu] = useState(false);
   const auth = localStorage.getItem("authToken");
   const location = useLocation();
   const logoutHandler = () => {
@@ -17,8 +20,7 @@ const Header = () => {
       <h1>
         <NavLink to={"/"}>Shoes Bond.</NavLink>
       </h1>
-
-      <div>
+      <div className={menu === true ? "phoneNav" : "mainNav"}>
         <NavLink to={"/"}>Home</NavLink>
         <NavLink to={"/about"}>About</NavLink>
         <NavLink to={"/products"}>Products</NavLink>
@@ -52,6 +54,9 @@ const Header = () => {
             </NavLink>
           </>
         )}
+      </div>
+      <div className="menu-btn" onClick={() => setMenu(!menu)}>
+        {menu === true ? <IoClose /> : <GiHamburgerMenu />}
       </div>
     </nav>
   );
