@@ -3,7 +3,7 @@ footer {
     height: 40vh;
     background-color: $primary;
     position: relative;
-    margin-top: 5rem;
+    margin-top: 7rem;
 
     >div {
         margin-inline: $p_lg;
@@ -86,7 +86,6 @@ footer {
         }
 
         >div {
-            border: 1px solid;
             width: 33%;
             height: 100%;
             display: flex;
@@ -197,6 +196,40 @@ footer {
 
             >div {
                 display: none;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    footer {
+        height: unset;
+
+        >div {
+            display: none;
+        }
+
+        >section {
+            padding: 0 $p_zero;
+            height: 100%;
+            flex-direction: column-reverse;
+            height: unset;
+            align-items: center;
+            gap: 1rem;
+
+            >aside {
+                width: 100%;
+                align-items: center;
+
+                &:first-of-type {
+                    >p {
+                        text-align: center;
+                    }
+                }
+            }
+
+            >div {
+                width: 100%;
             }
         }
     }

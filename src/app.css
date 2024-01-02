@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -20,4 +21,23 @@ li {
 
 a {
     text-decoration: none;
+}
+
+/* Add these styles to your CSS */
+#main {
+    position: relative;
+}
+
+/* Your content should be placed inside .scroll-container */
+.scroll-container {
+    position: relative;
+    will-change: transform;
+}
+
+/* Each section should have the .scroll-section class */
+.scroll-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
 }

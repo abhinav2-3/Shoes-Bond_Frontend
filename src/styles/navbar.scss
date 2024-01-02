@@ -157,3 +157,22 @@ nav {
         right: 1vw;
     }
 }
+
+@media only screen and (max-width: 425px) {
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        padding: 0 1rem;
+
+        >h1>a {
+            font-size: 1.5rem;
+        }
+    }
+
+    .phoneNav {
+        width: 50%;
+        right: 1vw;
+    }
+}
