@@ -204,6 +204,7 @@ footer {
 @media only screen and (max-width: 425px) {
     footer {
         height: unset;
+        margin-top: 1rem;
 
         >div {
             display: none;

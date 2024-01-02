@@ -6,7 +6,7 @@ const About = () => {
     name: "Shoes-Bond Ecommerce",
   };
   return (
-    <div>
+    <div className="home">
       <Herosection myData={data} />
     </div>
   );
