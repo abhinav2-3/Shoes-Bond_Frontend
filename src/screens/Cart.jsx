@@ -88,7 +88,7 @@ const Cart = () => {
                     decrement={() => decrement(currElem.id)}
                   />
                 </div>
-                <p className="price">
+                <p className="price subtotal">
                   <FormatPrice price={currElem.price * currElem.amount} />
                 </p>
                 <p className="button">

@@ -1,23 +1,11 @@
 .cart {
     width: 100%;
-    height: 75vh;
+    height: unset;
     padding: 0 $p_lg;
     margin: 2rem auto;
 
-    >.user-detail {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-
-        >img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-        }
-
-    }
-
     >.table {
+        width: 100%;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
 
@@ -30,6 +18,7 @@
 
     >.productDetail {
         width: 100%;
+        position: relative;
 
         >div {
             display: flex;
@@ -59,7 +48,6 @@
             }
 
             >.price {
-
                 width: 18%;
                 display: grid;
                 place-items: center;
@@ -67,7 +55,6 @@
             }
 
             >.cartToggle {
-
                 display: grid;
                 place-items: center;
                 width: 20%;
@@ -95,6 +82,7 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
+            margin-top: 2rem;
 
             >a>button {
                 width: 12rem;
@@ -115,12 +103,14 @@
         }
 
         >.total {
+            position: relative;
+            bottom: 1rem;
+            right: -63%;
             display: flex;
             width: 33%;
             border-radius: 5px;
             gap: 10px;
             flex-direction: column;
-            margin-left: 67%;
             background-color: rgb(243, 243, 243);
             margin-top: 3rem;
             padding: 2rem;
@@ -133,8 +123,6 @@
 
 }
 
-
-
 .noData {
     width: 100%;
     height: 50vh;
@@ -144,5 +132,202 @@
     >h3 {
         font: 400 3rem $text;
         text-transform: uppercase;
+    }
+}
+
+@media only screen and (min-width: 993px) and (max-width:1200px) {
+    .cart {
+        width: 0 $p_md;
+
+        >.productDetail {
+            >.total {
+                width: 37%;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:701px) and (max-width:995px) {
+    .cart {
+        padding: 0 $p_md;
+
+        .productDetail {
+            >div {
+                >.prod_data {
+                    width: 28%;
+                }
+            }
+
+            >.total {
+                width: 50%;
+                right: -50%;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 700px) {
+    .cart {
+        padding: 0 $p_sm;
+
+        >.table {
+            grid-template-columns: repeat(4, 1fr);
+
+            >p {
+                font-size: 0.8rem;
+
+                &:nth-child(4) {
+                    display: none;
+                }
+            }
+        }
+
+        >.productDetail {
+            >div {
+                margin: 0.5rem 0;
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+
+                >.prod_data {
+                    width: 100%;
+
+                    >img {
+                        display: none;
+                    }
+
+                    >aside>span {
+                        font-size: 0.8rem;
+                    }
+                }
+
+                >.price {
+                    width: 100%;
+                    font-size: 0.8rem;
+                }
+
+                >.subtotal {
+                    display: none;
+                }
+
+                >.cartToggle {
+                    width: 100%;
+
+                    .qty {
+                        >span {
+                            font-size: 1rem;
+                        }
+
+                        >button {
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+
+                >.button {
+                    width: 100%;
+                }
+            }
+
+            >.two-btns {
+                >a>.btn {
+                    width: 7rem;
+                    padding: 0.4rem;
+                }
+
+                >.btn {
+                    width: 8rem;
+                    padding: 0.5rem;
+                }
+            }
+
+            >.total {
+                width: 90%;
+                right: -10%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .cart {
+        padding: 0 $p_zero;
+
+        >.table {
+            grid-template-columns: repeat(4, 1fr);
+
+            >p {
+                font-size: 0.8rem;
+
+                &:nth-child(4) {
+                    display: none;
+                }
+            }
+        }
+
+        >.productDetail {
+            >div {
+                margin: 0.5rem 0;
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+
+                >.prod_data {
+                    width: 100%;
+
+                    >img {
+                        display: none;
+                    }
+
+                    >aside>span {
+                        font-size: 0.8rem;
+                    }
+                }
+
+                >.price {
+                    width: 100%;
+                    font-size: 0.8rem;
+                }
+
+                >.subtotal {
+                    display: none;
+                }
+
+                >.cartToggle {
+                    width: 100%;
+
+                    .qty {
+                        >span {
+                            font-size: 1rem;
+                        }
+
+                        >button {
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+
+                >.button {
+                    width: 100%;
+                }
+            }
+
+            >.two-btns {
+                >a>.btn {
+                    width: 7rem;
+                    padding: 0.4rem;
+                }
+
+                >.btn {
+                    width: 8rem;
+                    padding: 0.5rem;
+                }
+            }
+
+            >.total {
+                width: 90%;
+                right: -10%;
+            }
+        }
     }
 }
