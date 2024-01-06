@@ -52,7 +52,7 @@ const filterReducer = (state, action) => {
 
       if (text) {
         newProductsList = newProductsList.filter((currElem) =>
-          currElem.name.toLowerCase().includes(text)
+          currElem.name.toLowerCase().includes(text.toLowerCase())
         );
       }
 

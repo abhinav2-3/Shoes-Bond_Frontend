@@ -1,23 +1,13 @@
 import React from "react";
 import { useProductContext } from "../context/ProductContext";
 import Product from "./Product";
+import Loader from "./Loader";
 
 const FeaturedProducts = () => {
   const { isLoading, featureProducts } = useProductContext();
 
   if (isLoading) {
-    return (
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        Loading.....
-      </div>
-    );
+    return <Loader />;
   }
   return (
     <section className="featureProducts">
