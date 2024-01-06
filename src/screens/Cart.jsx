@@ -26,7 +26,7 @@ const Cart = () => {
     [...cart].forEach(async (item) => {
       try {
         await axios.post(
-          "http://localhost:8000/orders",
+          "https://shoes-bond.onrender.com/orders",
           {
             name: item.name,
             imageURL: item.image,

@@ -11,7 +11,7 @@ const MyOrder = () => {
   const myOrders = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/getOrders",
+        "https://shoes-bond.onrender.com/getOrders",
         { userId },
         {
           headers: {
@@ -38,7 +38,7 @@ const MyOrder = () => {
   const clearOrderHistory = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/clearOrders",
+        "https://shoes-bond.onrender.com/clearOrders",
         { userId },
         {
           headers: {
@@ -66,7 +66,7 @@ const MyOrder = () => {
           placeItems: "center",
         }}
       >
-        You Haven't Order Anything Yet !!
+        <h2> You Haven't Order Anything Yet !!</h2>
       </div>
     );
   } else {

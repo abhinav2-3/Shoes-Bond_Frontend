@@ -29,7 +29,7 @@ const Signup = () => {
   const handleSignUp = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/signup",
+        "https://shoes-bond.onrender.com/signup",
         signupData,
         {
           headers: {
