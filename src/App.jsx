@@ -1,5 +1,5 @@
 import "./styles/App.scss";
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./screens/Home";
 import Header from "./compoenents/Header";
@@ -15,6 +15,12 @@ import Contacts from "./screens/Contacts";
 import MyOrder from "./screens/MyOrder";
 
 function App() {
+  useEffect(() => {
+    alert(
+      "Please wait a moment while we fetch the data from our custome server. Thank you for your patience."
+    );
+  }, []);
+
   return (
     <Router>
       <Header />

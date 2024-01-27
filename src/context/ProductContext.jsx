@@ -4,7 +4,7 @@ import reducer from "../reducer/productReducer";
 
 const AppContext = createContext();
 
-const API = "https://shoes-bond.onrender.com/api_items";
+const API = "https://shoes-bond.onrender.com/api_itemss";
 
 const initialState = {
   isLoading: false,

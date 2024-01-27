@@ -7,7 +7,7 @@ const Herosection = ({ myData }) => {
   return (
     <>
       <div className="advideo">
-        <video type="video/mp4" muted autoPlay src={adVideo}></video>
+        <video loop type="video/mp4" muted autoPlay src={adVideo}></video>
       </div>
       <section className="herosection">
         <aside className="heroData">
