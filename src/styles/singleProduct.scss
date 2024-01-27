@@ -173,6 +173,14 @@
 
 @media only screen and (max-width: 425px) {
     .single_product {
+        >.pageNavigation {
+
+            >a,
+            span {
+                font-size: 1rem;
+            }
+        }
+
         >.container {
             height: unset;
             padding: 0 $p_zero;
@@ -182,12 +190,11 @@
                 width: 100%;
 
                 .myImages {
-                    height: 21vh;
+                    height: 47vh;
                     flex-direction: column-reverse;
-                    justify-content: space-between;
+                    gap: 3rem;
 
                     >div {
-                        border: 1px solid;
                         width: 100%;
                         flex-direction: row;
                         justify-content: space-between;

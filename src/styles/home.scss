@@ -1,7 +1,6 @@
 .home {
     width: 100%;
     height: auto;
-    margin-top: 5rem;
     margin-bottom: 3rem;
 }
 
@@ -89,7 +88,7 @@
 @media only screen and (max-width: 425px) {
     .home {
         .herosection {
-            padding: 0 $p_zero;
+            padding: $p_zero;
             flex-direction: column;
             width: 100%;
             margin-top: 0;
