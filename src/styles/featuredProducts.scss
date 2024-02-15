@@ -101,16 +101,16 @@
     >div {
         display: flex;
         justify-content: space-between;
-        margin-top: 10px;
+        padding: 10px;
         align-items: center;
         text-transform: uppercase;
 
         >h3 {
-            font: 500 1.1rem $text;
+            font: 500 1rem $text;
         }
 
         >p {
-            font: 400 1.1rem $text;
+            font: 400 1rem $text;
             color: $primary;
         }
     }
@@ -167,7 +167,7 @@
         padding: 0 $p_zero;
         height: unset;
         flex-direction: column;
-        justify-content: start;
+        justify-content: flex-start;
 
         >h3 {
             font-size: 1.3rem;

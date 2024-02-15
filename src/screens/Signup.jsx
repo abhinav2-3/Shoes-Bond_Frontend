@@ -16,6 +16,7 @@ const Signup = () => {
     number: "",
     address: "",
     password: "",
+    image: "",
   });
 
   const handleChange = (e) => {
@@ -25,7 +26,6 @@ const Signup = () => {
       [name]: value,
     }));
   };
-
   const handleSignUp = async () => {
     try {
       const response = await axios.post(
@@ -52,12 +52,13 @@ const Signup = () => {
       } else if (err.response?.status === 409) {
         toast.error("Already Registered with this Email");
       } else {
-        toast("Login Failed\n\nTry After Sometime", {
+        toast.error("Login Failed\n\nTry After Sometime", {
           duration: 2000,
         });
       }
     }
   };
+
   return (
     <div className="signup">
       <Toaster />
@@ -109,6 +110,15 @@ const Signup = () => {
         <div>
           If Already Exist !! <NavLink to={"/login"}> Login</NavLink>
         </div>
+        <aside>
+          <input
+            type="file"
+            accept="image/*"
+            name="image"
+            value={signupData.image}
+            onChange={handleChange}
+          />
+        </aside>
         <button type="button" className="btn" onClick={handleSignUp}>
           Sign Up
         </button>

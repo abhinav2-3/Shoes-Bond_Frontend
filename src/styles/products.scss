@@ -7,6 +7,7 @@
     .container {
         width: 80%;
         height: 100%;
+        background-color: $light;
 
         .top-bar {
             width: 100%;
@@ -31,20 +32,59 @@
         .main {
             width: 100%;
             height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
 
             >.productList {
                 width: 100%;
                 height: 100%;
+                overflow: hidden;
                 display: flex;
                 gap: 2rem;
                 flex-flow: wrap;
-                justify-content: space-between;
-
+                justify-content: center;
+                padding: 1rem 0;
             }
+
         }
     }
 }
 
+.page-btn {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+
+    .LR-btn {
+        border: none;
+        padding: 1rem;
+        outline: none;
+        background-color: transparent;
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+        border-radius: 6px;
+        transition: all 0.3s;
+
+        &:hover {
+            box-shadow: rgba(53, 53, 53, 0.658) 0px 0px 10px 3px;
+        }
+    }
+}
+
+.disable-button {
+    border: none;
+    padding: 1rem;
+    outline: none;
+    background-color: transparent;
+    display: grid;
+    place-items: center;
+    border-radius: 6px;
+    pointer-events: none;
+    opacity: 0.5;
+}
 
 
 @media only screen and (min-width: 993px) and (max-width:1200px) {

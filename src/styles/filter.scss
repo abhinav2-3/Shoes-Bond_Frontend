@@ -37,6 +37,10 @@
             &:hover {
                 font-weight: 500;
             }
+
+            &:active {
+                font-weight: 500;
+            }
         }
 
     }
@@ -80,6 +84,11 @@
         background-color: red;
 
         &:hover {
+            filter: invert(1);
+            transform: scale(1.1);
+        }
+
+        &:active {
             filter: invert(1);
             transform: scale(1.1);
         }

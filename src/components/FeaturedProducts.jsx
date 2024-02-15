@@ -2,7 +2,6 @@ import React from "react";
 import { useProductContext } from "../context/ProductContext";
 import Product from "./Product";
 import Loader from "./Loader";
-import toast, { Toaster } from "react-hot-toast";
 
 const FeaturedProducts = () => {
   const { isLoading, featureProducts } = useProductContext();
@@ -12,7 +11,6 @@ const FeaturedProducts = () => {
   }
   return (
     <section className="featureProducts">
-      <Toaster />
       <span>Check Now</span>
       <h3>Our Featured Products</h3>
       <div>

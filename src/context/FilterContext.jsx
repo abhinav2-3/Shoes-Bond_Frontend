@@ -40,7 +40,7 @@ const FilterProvider = ({ children }) => {
   const updateFilterValue = (e) => {
     let name = e.target.name;
     let value = e.target.value;
-    dispatch({ type: "UPDATE_FILTER_VALUE", payload: { name, value } });
+    return dispatch({ type: "UPDATE_FILTER_VALUE", payload: { name, value } });
   };
 
   const clearFilter = () => {

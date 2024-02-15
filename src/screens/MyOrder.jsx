@@ -1,8 +1,8 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import FormatPrice from "../compoenents/FormatPrice";
-import FormatDate from "../compoenents/DateFormat";
+import FormatPrice from "../components/FormatPrice";
+import FormatDate from "../components/DateFormat";
 
 const MyOrder = () => {
   const [orderData, setOrderData] = useState([]);
@@ -52,9 +52,7 @@ const MyOrder = () => {
     }
   };
 
-  useEffect(() => {
-    myOrders();
-  }, []);
+  myOrders();
 
   if (orderData.length === 0 || orderData === "[]") {
     return (
