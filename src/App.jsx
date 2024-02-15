@@ -1,16 +1,16 @@
-import "./styles/app.scss";
+import "./styles/App.scss";
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./screens/Home";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./compoenents/Header";
+import Footer from "./compoenents/Footer";
 import About from "./screens/About";
 import SingleProduct from "./screens/SingleProduct";
 import Signup from "./screens/Signup";
 import Login from "./screens/Login";
 import Products from "./screens/Products";
 import Cart from "./screens/Cart";
-import ErrorPage from "./components/ErrorPage";
+import ErrorPage from "./compoenents/ErrorPage";
 import Contacts from "./screens/Contacts";
 import MyOrder from "./screens/MyOrder";
 
